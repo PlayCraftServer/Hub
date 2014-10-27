@@ -3,19 +3,6 @@ Hub
 
 Plugin of PlayCraft© Server
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <title>Botón</title>
- <style>
-     img  {
-      cursor:pointer;
-     }
- </style>
-</head>
-<body>
-
 
 
 
