@@ -416,6 +416,12 @@ public class Hub extends JavaPlugin implements Listener{
 	  		  p.sendMessage(ChatColor.GRAY + "Version: " + ChatColor.AQUA + "4.1");
 	  		  p.sendMessage(ChatColor.GRAY + "For more info:" + ChatColor.RED + " " + "/hub help");
 	  		  p.sendMessage(ChatColor.DARK_GRAY + "==================");
+	      } else if (p.getName().contains("diegoo000")){
+	    	  p.sendMessage(ChatColor.DARK_GRAY + "====== [" + ChatColor.GOLD + "Hub" + ChatColor.DARK_GRAY + "] ======");
+	  		  p.sendMessage(ChatColor.GRAY + "Plugin by: " + ChatColor.RED + "DJBiokinetix");
+	  		  p.sendMessage(ChatColor.GRAY + "Version: " + ChatColor.AQUA + "4.1");
+	  		  p.sendMessage(ChatColor.GRAY + "For more info:" + ChatColor.RED + " " + "/hub help");
+	  		  p.sendMessage(ChatColor.DARK_GRAY + "==================");
 	      }
 		e.setJoinMessage(null);
 	}
