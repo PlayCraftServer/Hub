@@ -19,20 +19,23 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Hub extends JavaPlugin implements Listener{
 	
-	String prefix = (ChatColor.DARK_GRAY + "[" + ChatColor.GOLD + "Hub" + ChatColor.DARK_GRAY + "]" + " ");
-	
+	String prefix = (ChatColor.DARK_GRAY + "[" + ChatColor.GOLD + "Hub" + ChatColor.DARK_GRAY + "]" + ChatColor.GRAY + " ");
+	public static final Logger l = Logger.getLogger("Minecraft");
+	PluginManager pm = Bukkit.getPluginManager();
 	final HashMap<Long, Long> Timer = new HashMap<Long, Long>();
 	public HashMap<String, Long> cooldowns = new HashMap<String, Long>();
 	
 	@Override
 	public void onEnable(){
+		pm.registerEvents(this, this);
+		l.info("Plugin enabled!");
 		saveDefaultConfig();
-		getServer().getPluginManager().registerEvents(this, this);
-    }
+    	}
 	
 	@Override
 	public void onDisable(){
-		saveDefaultConfig();
+		l.info("Plugin disabled!");
+		saveConfig();
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -44,14 +47,14 @@ public class Hub extends JavaPlugin implements Listener{
       String notallowed = getConfig().getString("No permission");
       String wait = getConfig().getString("Wait message");
 	  
-	  String leave = getConfig().getString("S Fake").replaceAll("&", "§").replaceAll("%user%", jugador.getPlayer().getName());
-	  String entry = getConfig().getString("E Fake").replaceAll("&", "§").replaceAll("%user%", jugador.getPlayer().getName());
+	  String leave = getConfig().getString("S Fake").replaceAll("&", "Â§").replaceAll("%user%", jugador.getPlayer().getName());
+	  String entry = getConfig().getString("E Fake").replaceAll("&", "Â§").replaceAll("%user%", jugador.getPlayer().getName());
 	  	  	  
 	  	  if(cmd.getName().equalsIgnoreCase("hub")){
 	  		if (args.length == 0) {
 	  		  jugador.sendMessage(ChatColor.DARK_GRAY + "====== [" + ChatColor.GOLD + "Hub" + ChatColor.DARK_GRAY + "] ======");
 	  		  jugador.sendMessage(ChatColor.GRAY + "Plugin by: " + ChatColor.RED + "DJBiokinetix");
-	  		  jugador.sendMessage(ChatColor.GRAY + "Version: " + ChatColor.AQUA + "4.1");
+	  		  jugador.sendMessage(ChatColor.GRAY + "Version: " + ChatColor.AQUA + getDescription().getVersion());
 	  		  jugador.sendMessage(ChatColor.GRAY + "For more info:" + ChatColor.RED + " " + "/hub help");
 	  		  jugador.sendMessage(ChatColor.DARK_GRAY + "==================");
 	  		} else if (args.length == 1) {
@@ -399,12 +402,12 @@ public class Hub extends JavaPlugin implements Listener{
 		Location loc = e.getPlayer().getLocation();
 		
 		if (p.hasPermission("join.hub")) {
-			e.setJoinMessage(getConfig().getString("Join").replaceAll("&", "§").replaceAll("%user%", e.getPlayer().getName()));
+			e.setJoinMessage(getConfig().getString("Join").replaceAll("&", "Â§").replaceAll("%user%", e.getPlayer().getName()));
 			FireworkTypes.shootFireworkRandom(e.getPlayer());
 	        return;
 	      } else if(p.getName().contains("DJBiokinetix")) {
 	    	  p.sendMessage(ChatColor.AQUA + "========================================");
-	    	  p.sendMessage(prefix + ChatColor.RED + ChatColor.BOLD + " " + "¡Este servidor usa tu plugin!" + " " + prefix);
+	    	  p.sendMessage(prefix + ChatColor.RED + ChatColor.BOLD + " " + "Â¡Este servidor usa tu plugin!" + " " + prefix);
 	    	  p.sendMessage(ChatColor.AQUA + "========================================");
 	    	  p.playEffect(loc, Effect.RECORD_PLAY, 2259);
 	    	  for (Player players : Bukkit.getOnlinePlayers()){
@@ -433,7 +436,7 @@ public class Hub extends JavaPlugin implements Listener{
 		Location loc = e.getPlayer().getLocation();
 		
 		if (p.hasPermission("leave.hub")){
-			e.setQuitMessage(getConfig().getString("Leave").replaceAll("&", "§").replaceAll("%user%", e.getPlayer().getName()));
+			e.setQuitMessage(getConfig().getString("Leave").replaceAll("&", "Â§").replaceAll("%user%", e.getPlayer().getName()));
 			return;
 		} else if (p.getPlayerListName().equalsIgnoreCase("DJBiokinetix")){
 			for (Player players : Bukkit.getOnlinePlayers()){
