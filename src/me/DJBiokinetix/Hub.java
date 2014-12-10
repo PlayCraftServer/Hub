@@ -64,6 +64,7 @@ public class Hub extends JavaPlugin implements Listener{
 		        		reloadConfig();
 		        		jugador.sendMessage(ChatColor.GREEN + "Configuration reloaded");
 		        	}
+		        }
 		         } else if (args.length == 1){
 		    		  if(args[0].equalsIgnoreCase("music")){
 		    	  		  jugador.sendMessage(ChatColor.DARK_GRAY + "======================= [" + ChatColor.GOLD + "Music" + ChatColor.DARK_GRAY + "] =======================");
