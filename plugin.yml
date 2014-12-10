@@ -1,0 +1,111 @@
+name: Hub
+main: me.DJBiokinetix.Hub
+version: 4.3
+author: DJBiokinetix
+commands:
+   fw:
+    description: Shoot firework.
+    aliases: [firework]
+   entry:
+    description: Fake message.
+   fake:
+    description: Fake message.
+   /hub:
+    description: Info of the plugin.
+permissions:
+    hub.reload:
+        default: op
+    hub.modify:
+        default: op
+    hub.update:
+        default: op
+    fake.hub:
+        default: op
+    firework.hub:
+        default: op
+    firework.red:
+        default: op
+    firework.lime:
+        default: op
+    firework.blue:
+        default: op
+    firework.white:
+        default: op
+    firework.yellow:
+        default: op
+    firework.multi:
+        default: op
+    firework.purple:
+        default: op
+    firework.admin:
+        default: op
+    join.hub:
+        default: op
+    leave.hub:
+        default: op
+    hub.restart:
+        default: op
+    13.hub:
+        default: true
+    cat.hub:
+        default: true
+    blocks.hub:
+        default: true
+    chirp.hub:
+        default: true
+    far.hub:
+        default: true
+    mall.hub:
+        default: true
+    mellohi.hub:
+        default: true
+    stal.hub:
+        default: true
+    strad.hub:
+        default: true
+    ward.hub:
+        default: true
+    11.hub:
+        default: true
+    wait.hub:
+        default: true
+    hub.firework.*:
+        description: Gives access to all Fireworks!
+        children:
+            firework.admin: true
+            firework.purple: true
+            firework.white: true
+            firework.lime: true
+            firework.yellow: true
+            firework.red: true
+            firework.blue: true
+            firework.multi: true
+    music.hub.*:
+        description: Gives access to all music discs!
+        children:
+            13.hub: true
+            cat.hub: true
+            blocks.hub: true
+            chirp.hub: true
+            far.hub: true
+            mall.hub: true
+            mellohi.hub: true
+            stal.hub: true
+            strad.hub: true
+            ward.hub: true
+            11.hub: true
+            wait.hub: true
+    hub.*:
+        description: Gives access to all Hub events and commands
+        children:
+            hub.reload: false
+            hub.restart: false
+            hub.update: true
+            music.hub.*: true
+            hub.firework.*: true
+            fake.hub: false
+            firework.hub: true
+            firework.admin: false
+            join.hub: true
+            leave.hub: true
+            hub.kick.notify: true
