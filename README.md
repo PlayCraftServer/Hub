@@ -11,6 +11,10 @@ The plugin was inspired by another plugin made ​​by concuncan, Neocrafters d
 
 Download the plugin in the next button: [![Build Status](http://i.imgur.com/7gGQZFy.png)](http://www.spigotmc.org/resources/hub.1095/download?version=8178)
 
+New codes
+===
+- [Branch "New"] (https://github.com/PlayCraftServer/Hub/tree/New)
+
 Permissions
 ===
 
