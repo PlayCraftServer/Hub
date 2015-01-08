@@ -3,7 +3,7 @@ Hub
 
 Plugin of PlayCraft© Server
 
-This plugin is composed of ideas and codes of DJBiokinetix and diegoo000(firesouls140). 
+This plugin is composed of ideas and codes of DJBiokinetix. 
 
 - [SpigotMC Plugin] (http://www.spigotmc.org/resources/hub.1095)
 
